@@ -1,14 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Code') {
+    stage('build') {
       steps {
-        git(url: 'https://github.com/suisanT1/TrainingSuperheros', branch: 'main')
+        echo "building the application"
       }
     }
+    
 
-    stage('') {
+    stage('test') {
       steps {
+         echo "testing the application"
+        sh 'ls -all'
+      }
+    }
+    stage('deploy') {
+      steps {
+         echo "deploying the application"
         sh 'ls -all'
       }
     }
